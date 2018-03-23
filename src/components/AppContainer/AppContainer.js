@@ -6,9 +6,7 @@ import 'whatwg-fetch';
 const API_URL = 'http://localhost/resource'
 const API_HEADERS = {
 	'Content-Type': 'application/json',
-	'Access-Control-Allow-Origin': '*',
-
-};
+	};
 
 class AppContainer extends Component{
 
@@ -20,7 +18,7 @@ class AppContainer extends Component{
 	}
 
 	componentDidMount(){
-		fetch(API_URL+'/user/list',{headers:API_HEADERS},{method:'GET'})
+		fetch(API_URL+'/user/list',{headers:API_HEADERS})
 		.then((response) =>response.json())
 		.then((responseData)=>{
 			this.setState({users:responseData})

@@ -5,14 +5,10 @@ class UserDashBoard extends Component{
 
 	render(){
 		return(
-			<ul>
-				{this.props.users.map(
-					(user) => 
-					 <UserList 	key={user.id} 
-												username={user.username}
-												id={user.id} />
-				)}
-			</ul>
+		
+			<UserList users={this.props.users} />
+		
+		
 		);
 	}
 
