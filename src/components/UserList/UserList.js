@@ -2,18 +2,25 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Table, Container} from 'reactstrap';
 import UserRow from '../UserRow/UserRow';
-
+import logo from './add_blue.png';
 class UserList extends Component{
 
 	render(){
+		let iconStyle = {
+		  height: '50px',
+		  width: '50px',
+		  
+		  WebkitTransition: 'all', // note the capital 'W' here
+		  msTransition: 'all' // 'ms' is the only lowercase vendor prefix
+		};
 			
-		//return <li className="checklist__task">{this.props.username} - {this.props.id}</li>		
 		return(
 
 			<div> 
 				<Container>
 				<div className="clearfix"></div>
 				<br/>
+				
 				<div align="center">User List</div>
 				<Table striped>
 					<thead>
@@ -23,7 +30,7 @@ class UserList extends Component{
 							<td>Action</td>
 						</tr>
 					</thead>
-					<UserRow users={this.props.users} key={this.props.users.id}/>
+					<UserRow users={this.props.users} key={this.props.users.id} userCallbacks={this.props.userCallbacks}/>
 				</Table>
 				</Container>
 			</div>

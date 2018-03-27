@@ -6,7 +6,9 @@ class UserDashBoard extends Component{
 	render(){
 		return(
 		
-			<UserList users={this.props.users} />
+			<UserList users={this.props.users} 
+						userCallbacks={this.props.userCallbacks}
+						/>
 		
 		
 		);
